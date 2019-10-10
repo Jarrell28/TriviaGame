@@ -56,6 +56,8 @@ var TriviaObj = {
     unanswered: 0,
     remaining: 0,
     correctAnswer: "",
+    secondsLeft: 30,
+    timer: "",
 
     startGame: function () {
         $("#start").hide();
@@ -63,6 +65,7 @@ var TriviaObj = {
 
         this.getQuestion();
         $("#question").show();
+        $("#time-container").show();
     },
 
     playAgain: function () {
@@ -79,16 +82,22 @@ var TriviaObj = {
 
         if (answer === this.correctAnswer) {
             alert("Correct");
+            this.correct++;
+            console.log(this.correct);
         } else {
             alert("Incorrect");
+            this.incorrect++;
+            console.log(this.incorrect);
         }
 
         this.getQuestion();
+        clearInterval(this.timer);
 
 
     },
 
     gameResults: function () {
+        clearInterval(this.timer);
         alert("Game Over");
     },
 
@@ -97,6 +106,19 @@ var TriviaObj = {
         this.remaining = this.gameQuestions.length;
 
         if (this.remaining > 0) {
+            this.secondsLeft = 30;
+            clearInterval(this.timer);
+            this.timer = setInterval(function () {
+                $("#time").text(TriviaObj.secondsLeft);
+
+                if (TriviaObj.secondsLeft === 0) {
+                    TriviaObj.unanswered++;
+                    console.log(TriviaObj.unanswered);
+                    TriviaObj.getQuestion();
+                }
+                TriviaObj.secondsLeft--;
+            }, 1000);
+
             var random = Math.floor(Math.random() * this.gameQuestions.length);
 
             var currentQuestion = this.gameQuestions[random];
@@ -114,23 +136,10 @@ var TriviaObj = {
         } else {
             this.gameResults();
         }
-
-
-
-
     }
-
-
 }
 
-
-
-
 //Event Listeners
-$(document).ready(function () {
-    //start game
-})
-
 $("#start").on("click", function () {
     //start game
     TriviaObj.startGame();
