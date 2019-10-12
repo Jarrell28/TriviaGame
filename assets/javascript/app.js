@@ -50,13 +50,12 @@ var TriviaObj = {
             answer4: "6"
         }],
     gameQuestions: [],
-    playing: false,
     correct: 0,
     incorrect: 0,
     unanswered: 0,
     remaining: 0,
     correctAnswer: "",
-    secondsLeft: 8,
+    secondsLeft: 5,
     timer: "",
 
     startGame: function () {
@@ -64,7 +63,7 @@ var TriviaObj = {
         $("#start").hide();
 
         //Makes a copy of questions array
-        this.gameQuestions = Object.assign(this.questions);
+        this.gameQuestions = this.questions.concat();
         //Gets first question
         this.getQuestion();
         $("#question").show();
@@ -72,12 +71,16 @@ var TriviaObj = {
     },
 
     playAgain: function () {
-
+        this.reset();
+        this.startGame();
     },
 
     reset: function () {
+        this.correct = 0;
+        this.incorrect = 0;
+        this.unanswered = 0;
         $("#results").hide();
-
+        $("#play-again").hide();
     },
 
     checkAnswer: function (answer) {
@@ -101,7 +104,7 @@ var TriviaObj = {
         //Goes to next question
         setTimeout(function () {
             TriviaObj.getQuestion();
-        }, 5000)
+        }, 3000)
 
         //Clears timer interval
         clearInterval(this.timer);
@@ -131,7 +134,7 @@ var TriviaObj = {
         //If there are still questions left
         if (this.remaining > 0) {
             //Resets seconds left for question
-            this.secondsLeft = 8;
+            this.secondsLeft = 5;
             $("#time").text(this.secondsLeft);
             //Clears any previous timer interval
             clearInterval(this.timer);
@@ -189,6 +192,7 @@ $("#start").on("click", function () {
 
 $("#play-again").on("click", function () {
     //start game
+    TriviaObj.playAgain();
 })
 
 $("#question").on("click", ".choice", function () {
