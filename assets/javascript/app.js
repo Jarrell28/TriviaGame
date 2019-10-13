@@ -124,14 +124,14 @@ var TriviaObj = {
         if (answer === this.correctAnswer) {
             this.correct++;
             $("#question").empty();
-            $("#question-result").html("<p class='text-center'>Correct!</p>");
+            $("#question-result").html("<p class='answered'>Correct! The answer was " + this.correctAnswer + "</p>");
         }
 
         //When they answered incorrectly
         else {
             this.incorrect++;
             $("#question").empty();
-            $("#question-result").html("<p class='text-center'>Wrong Answer!</p>");
+            $("#question-result").html("<p class='answered'>Wrong Answer! The answer was " + this.correctAnswer + "</p>");
 
         }
 
@@ -168,7 +168,7 @@ var TriviaObj = {
         //If there are still questions left
         if (this.remaining > 0) {
             //Resets seconds left for question
-            this.secondsLeft = 5;
+            this.secondsLeft = 15;
             $("#time").text(this.secondsLeft);
             //Clears any previous timer interval
             clearInterval(this.timer);
