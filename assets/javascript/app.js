@@ -2,52 +2,86 @@
 var TriviaObj = {
     questions: [
         {
-            question: "1 + 1",
-            correct: "2",
-            answer1: "3",
-            answer2: "4",
-            answer3: "2",
-            answer4: "1"
+            question: "What character did Charlie's real father, Martin Sheen, play on the show?",
+            correct: "Rose's father",
+            answer1: "Charlie and Alan's step father",
+            answer2: "Rose's father",
+            answer3: "Jake's principal",
+            answer4: "Judith's father"
         },
         {
-            question: "2 + 1",
-            correct: "3",
-            answer1: "3",
-            answer2: "4",
-            answer3: "2",
-            answer4: "1"
+            question: "Who guest stars in one episode as Charlie's new neighbor, whom Charlie tries to set up with Alan?",
+            correct: "Brooke Shields",
+            answer1: "Brooke Shields",
+            answer2: "Cindy Crawford",
+            answer3: "Paris Hilton",
+            answer4: "Jessica Simpson"
         },
         {
-            question: "4 + 1",
-            correct: "5",
-            answer1: "3",
-            answer2: "4",
-            answer3: "2",
-            answer4: "5"
+            question: "What does Alan do for a living?",
+            correct: "chiropractor",
+            answer1: "surgeon",
+            answer2: "writer",
+            answer3: "lawyer",
+            answer4: "chiropractor"
         },
         {
-            question: "2 + 2",
-            correct: "4",
-            answer1: "3",
-            answer2: "4",
-            answer3: "2",
-            answer4: "1"
+            question: "What is Charlie's doctor's name?",
+            correct: "Stanley Schwartz",
+            answer1: "Stanley Warwick",
+            answer2: "Stanley Schwartz",
+            answer3: "Irvin Schwartz",
+            answer4: "Thomas Smith"
         },
         {
-            question: "7 + 7",
-            correct: "14",
-            answer1: "3",
-            answer2: "14",
-            answer3: "2",
-            answer4: "1"
+            question: "What does Jake get in trouble at school for doing?",
+            correct: "drawing a picture of a classmate's breasts",
+            answer1: "throwing things at the teacher",
+            answer2: "cutting class",
+            answer3: "hitting another student",
+            answer4: "drawing a picture of a classmate's breasts"
         },
         {
-            question: "1 + 5",
-            correct: "6",
-            answer1: "3",
-            answer2: "4",
-            answer3: "2",
-            answer4: "6"
+            question: "Who is the young woman that Charlie dates first and then later Alan marries?",
+            correct: "Kandi",
+            answer1: "Katie",
+            answer2: "Kayla",
+            answer3: "Kelli",
+            answer4: "Kandi"
+        },
+        {
+            question: "What is the name of Berta's daughter, whom Alan dates?",
+            correct: "Naomi",
+            answer1: "Naomi",
+            answer2: "Judith",
+            answer3: "Natalie",
+            answer4: "Rose"
+        },
+
+        {
+            question: "What animal does Jake feed that eventually take over his room at Charlie's house?",
+            correct: "seagulls",
+            answer1: "cats",
+            answer2: "dogs",
+            answer3: "seagulls",
+            answer4: "crows"
+        },
+
+        {
+            question: "What is Charlie's occupation?",
+            correct: "jingle writer",
+            answer1: "he doesn't work",
+            answer2: "jingle writer",
+            answer3: "chiropractor",
+            answer4: "accountant"
+        },
+        {
+            question: "What is the name of the man whom Judith marries after she and Alan are divorced?",
+            correct: "Herb Melnick",
+            answer1: "Herb Melnick",
+            answer2: "Charlie Melmack",
+            answer3: "Harvey Melton",
+            answer4: "Mel Hervey"
         }],
     gameQuestions: [],
     correct: 0,
@@ -55,7 +89,7 @@ var TriviaObj = {
     unanswered: 0,
     remaining: 0,
     correctAnswer: "",
-    secondsLeft: 5,
+    secondsLeft: 15,
     timer: "",
 
     startGame: function () {

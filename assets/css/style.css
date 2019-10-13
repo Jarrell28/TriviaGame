@@ -1,7 +1,59 @@
+body{
+    min-height: 100vh;
+    width: 100%;
+    background-color: black;
+    color: #fff;
+    font-family: 'Hepta Slab', serif;
+}
+
+.bg {
+background: black url("../images/bg.jpg");
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+}
+
 .hide {
     display: none;
 }
 
 .choice {
     cursor: pointer;
+}
+
+.button {
+    background: transparent;
+    border: 2px solid #fff;
+    color: #fff;
+    padding: 10px 40px;
+    text-transform: uppercase;
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: all .5s;
+}
+
+.button:hover {
+    color: #000;
+    background: #fff;
+}
+
+
+
+#question p {
+    margin: 25px 0;
+    padding: 15px 0;
+    text-transform: uppercase;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    transition: all .5s;
+}
+
+#question p:hover{
+    background: #fff;
+    color: #000;
 }

@@ -8,24 +8,29 @@
     <title>Trivia Game</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Hepta+Slab&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
 <body>
     <div class="container-fluid">
-        <div class="container text-center">
-            <h1>Totally Trivial Trivia</h1>
-            <button id="start">Start Game</button>
-            <div id="results" class="hide">
-                <h2>Here's how you did!</h2>
-                <p id="correct">0</p>
-                <p id="incorrect">0</p>
-                <p id="unanswered">0</p>
+        <div class="row">
+            <div class="col-sm-6 bg"></div>
+            <div class="container text-center col-sm-6 pt-3 position-relative">
+                <h1 class="mb-3">Totally Trivial Trivia</h1>
+                <button id="start" class="button">Start Game</button>
+                <div id="results" class="hide">
+                    <h2 class="mb-3">Here's how you did!</h2>
+                    <p>Correct: <span id="correct">0</span></p>
+                    <p>Incorrect: <span id="incorrect">0</span></p>
+                    <p>Unanswered: <span id="unanswered">0</span></p>
+
+                </div>
+                <button id="play-again" class="hide button">Play Again</button>
+                <h3 class="hide mb-3" id="time-container">Time Remaining: <span id="time">8</span> seconds</h3>
+                <div id="question" class="hide"></div>
+                <div id="question-result"></div>
             </div>
-            <button id="play-again" class="hide">Play Again</button>
-            <h3 class="hide" id="time-container">Time Remaining: <span id="time">8</span> seconds</h3>
-            <div id="question" class="hide"></div>
-            <div id="question-result"></div>
         </div>
     </div>
 
